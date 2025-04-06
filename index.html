@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation Tasks</title>
+</head>
+<body>
+    <h2>Email and Date Validation Tasks</h2>
+    <label for="emailInput">Enter your email:</label>
+    <input type="text" id="emailInput" placeholder="e.g. example@example.com">
+    <button onclick="validateEmail()">Validate Email</button>
+    <p id="emailResult"></p>
+    <br><br>
+    <label for="dateInput">Enter a date (DD-MM-YYYY):</label>
+    <input type="text" id="dateInput" placeholder="e.g. 05-04-2023">
+    <button onclick="validateDate()">Check Date</button>
+    <p id="dateResult"></p>
+    <script>
+      
+        function validateEmail() {
+            const emailInput = document.getElementById("emailInput").value;
+            const emailResult = document.getElementById("emailResult");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailRegex.test(emailInput)) {
+                emailResult.textContent = "Valid email.";
+                emailResult.style.color = "green";
+            } else {
+                emailResult.textContent = "Invalid email.";
+                emailResult.style.color = "red";
+            }
+        }
+
+    
+        function validateDate() {
+            const input = document.getElementById("dateInput").value;
+            const result = document.getElementById("dateResult");
+
+         
+            const regex = /^(\d{2})-(\d{2})-(\d{4})$/;
+            if (!regex.test(input)) {
+                result.textContent = "Invalid format. Please use DD-MM-YYYY.";
+                result.style.color = "red";
+                return;
+            }
+
+            const [, day, month, year] = input.match(regex);
+            const inputDate = new Date(`${year}-${month}-${day}T00:00:00`);
+            const today = new Date();
+
+          
+            if (isNaN(inputDate.getTime())) {
+                result.textContent = "Invalid date.";
+                result.style.color = "red";
+                return;
+            }
+
+            if (inputDate < today.setHours(0, 0, 0, 0)) {
+                result.textContent = "Valid date and it's in the past.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "The date is not in the past.";
+                result.style.color = "orange";
+            }
+        }
+    </script>
+</body>
+</html>

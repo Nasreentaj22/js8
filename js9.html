@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Loops</title>
+</head>
+<body>
+    <button type="button" onclick="myFunc()">Click me!</button>
+    <script>
+        function myFunc() {
+            console.log("Loops Example:");
+
+            // for loop
+            console.log("For loop:");
+            for (let i = 0; i < 5; i++) {
+                console.log(i);
+            }
+
+            // for...in loop
+            console.log("\nFor...in loop:");
+            const details = { company_name: "Ultimez", course: "JS" };
+            for (const key in details) {
+                console.log(key + ": " + details[key]);
+            }
+
+            // for...of loop
+            console.log("\nFor...of loop:");
+            const colors = ["red", "green", "blue"];
+            for (const eachColor of colors) {
+                console.log(eachColor);
+            }
+
+            // while loop
+            console.log("\nWhile loop:");
+            let count = 0;
+            while (count < 3) {
+                console.log(count);
+                count++;
+            }
+
+            // do...while loop
+            console.log("\nDo...while loop:");
+            let num = 0;
+            do {
+                console.log(num);
+                num++;
+            } while (num < 3);
+        }
+    </script>
+</body>
+</html

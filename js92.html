@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Conditions</title>
+</head>
+<body>
+    <h1>Javascript conditions </h1>
+    <button type="button" onclick="myFunc()">Click me!</button>
+
+    <script>
+        function myFunc() {
+            // if
+            let num = 10;
+            if (num > 0) {
+                console.log("number is positive");
+            } else {
+                console.log("number is negative");
+            }
+
+            // if else
+            let num2 = -5;
+            if (num2 > 0) {
+                console.log("number is positive");
+            } else {
+                console.log("number is negative");
+            }
+
+
+            let num3 = 2;
+            if (num3 > 0) {
+                console.log("number is positive");
+            } else if (num3 === 0) {
+                console.log("number is zero");
+            } else {
+                console.log("number is negative");
+            }
+
+            let day = "Monday";
+            switch (day) {
+                case "Monday":
+                    console.log("Today is Monday");
+                    break;
+                case "Tuesday":
+                    console.log("Today is Tuesday");
+                    break;
+                default:
+                    console.log("Today is neither Monday nor Tuesday");
+            }
+        }
+        myFunc();
+    </script>
+</body>
+</html>
